@@ -20,7 +20,7 @@ class Logs(db.Model):
 def index():
     if request.method == 'GET':
         try:
-            query = Logs.query.order_by(Logs.date.desc()).limit(5).all()
+            query = Logs.query.order_by(Logs.date.desc()).limit(100).all()
         except:
             return 'Failed to load db',500
         csv = ''
